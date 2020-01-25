@@ -23,6 +23,16 @@ const tables = [{
 
 ];
 
+const waitlist = [
+  {
+    customerName: "Jennifer Aniston",
+    phoneNumber: "919-999-9999",
+    customerEmail: "jenaniston@gmail.com",
+    customerID: "jen"
+  }
+
+];
+
 // Routes
 // =============================================================
 
@@ -32,20 +42,33 @@ app.get("/", function(req, res) {
 });
 
 app.get("/tables", function(req, res) {
+<<<<<<< HEAD
     res.sendFile(path.join(__dirname, "add.html"));
 });
 
 app.get("/reserve", function(req, res) {
     res.sendFile(path.join(__dirname, "add.html"));
+=======
+  res.sendFile(path.join(__dirname, "reserve.html"));
 });
 
-// Displays all characters
+app.get("/reserve", function(req, res) {
+  res.sendFile(path.join(__dirname, "reserve.html"));
+>>>>>>> master
+});
+
+
+
 app.get("/api/tables", function(req, res) {
     return res.json(tables);
 });
 
 app.get("/api/waitlist", function(req, res) {
+<<<<<<< HEAD
     return res.json();
+=======
+  return res.json(waitlist);
+>>>>>>> master
 });
 
 // Displays a single table, or returns false
