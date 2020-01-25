@@ -29,16 +29,24 @@ const tables = [
 
 // Basic route that sends the user first to the AJAX Page
 app.get("/", function(req, res) {
-  res.sendFile(path.join(__dirname, "view.html"));
+  res.sendFile(path.join(__dirname, "home.html"));
 });
 
-app.get("/add", function(req, res) {
+app.get("/tables", function(req, res) {
+  res.sendFile(path.join(__dirname, "add.html"));
+});
+
+app.get("/reserve", function(req, res) {
   res.sendFile(path.join(__dirname, "add.html"));
 });
 
 // Displays all characters
 app.get("/api/tables", function(req, res) {
   return res.json(tables);
+});
+
+app.get("/api/waitlist", function(req, res) {
+  return res.json();
 });
 
 // Displays a single character, or returns false
