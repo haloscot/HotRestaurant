@@ -1,3 +1,12 @@
+html {
+    position: relative;
+    height: 100%;
+}
+
+body {
+    margin: 0 auto;
+}
+
 .container {
     margin-bottom: 20px;
 }
@@ -34,4 +43,10 @@ label {
 .nav-link:hover {
     cursor: pointer;
     color: rgb(105, 186, 212) !important;
+}
+
+#footer {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
 }
