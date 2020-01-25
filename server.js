@@ -24,6 +24,16 @@ const tables = [
 
 ];
 
+const waitlist = [
+  {
+    customerName: "Jennifer Aniston",
+    phoneNumber: "919-999-9999",
+    customerEmail: "jenaniston@gmail.com",
+    customerID: "jen"
+  }
+
+];
+
 // Routes
 // =============================================================
 
@@ -47,7 +57,7 @@ app.get("/api/tables", function(req, res) {
 });
 
 app.get("/api/waitlist", function(req, res) {
-  return res.json();
+  return res.json(waitlist);
 });
 
 // Displays a single table, or returns false
