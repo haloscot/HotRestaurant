@@ -6,10 +6,31 @@
     font-family: 'Righteous', cursive;
 }
 
+.display-4:hover {
+    cursor: pointer;
+    color: rgb(175, 58, 58);
+    transition: 1.5s;
+}
+
 .card {
     margin-top: 15px;
+    font-family: 'Montserrat', sans-serif;
+}
+
+.card-header:hover {
+    cursor: pointer;
+    color: rgb(175, 58, 58);
+    transition: 1.5s;
 }
 
 #reserveForm {
     margin: 10px !important;
+}
+
+label {
+    font-weight: bold;
+}
+
+.nav-link:hover {
+    color: rgb(105, 186, 212) !important;
 }
