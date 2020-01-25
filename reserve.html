@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+
+  <head>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+    <link rel="stylesheet" href="style.css">
+  </head>
+
+  <body>
+
+    <div class="container">
+
+      <div class="jumbotron text-center">
+        <h1 class="display-4">Hot Restaurant</h1>
+        <p class="lead">Current Reservations and Waiting List</p>
+        <hr class="my-4">
+        <a class="btn btn-danger btn-lg" href="#" role="button">Make Reservation</a>
+      </div>
+
+      <div class="card" id="reserveContainer">
+        <div class="card-header">
+        Table Reservation
+        </div>
+        <form id="reserveForm">
+          <div class="form-group">
+            <label for="exampleInputName">Name</label>
+            <input type="text" class="form-control" id="exampleInputName" aria-describedby="emailHelp" placeholder="Enter name">
+          </div>
+          <div class="form-group">
+            <label for="exampleInputPhone">Phone Number</label>
+            <input type="text" class="form-control" id="exampleInputPhone" placeholder="Enter name">
+          </div>
+          <div class="form-group">
+            <label for="exampleInputEmail">Email</label>
+            <input type="text" class="form-control" id="exampleInputEmail" placeholder="enter Email">
+          </div>
+          <div class="form-group">
+            <label for="exampleInputID">Unique ID</label>
+            <input type="text" class="form-control" id="exampleInputID" placeholder="enter ID">
+          </div>
+          <button type="submit" class="btn btn-primary">Submit</button>
+        </form>
+      </div>
+
+    </div>
+  </body>
+</html>
