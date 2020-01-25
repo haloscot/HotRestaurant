@@ -14,13 +14,12 @@ app.use(express.json());
 
 // Table Reservations (DATA)
 // =============================================================
-const tables = [
-  {
-    customerName: "Jennifer Aniston",
-    phoneNumber: "919-999-9999",
-    customerEmail: "jenaniston@gmail.com",
-    customerID: "jen"
-  }
+const tables = [{
+        customerName: "Jennifer Aniston",
+        phoneNumber: "919-999-9999",
+        customerEmail: "jenaniston@gmail.com",
+        customerID: "jen"
+    }
 
 ];
 
@@ -29,60 +28,56 @@ const tables = [
 
 // Basic route that sends the user first to the AJAX Page
 app.get("/", function(req, res) {
-  res.sendFile(path.join(__dirname, "home.html"));
+    res.sendFile(path.join(__dirname, "home.html"));
 });
 
 app.get("/tables", function(req, res) {
-  res.sendFile(path.join(__dirname, "add.html"));
+    res.sendFile(path.join(__dirname, "add.html"));
 });
 
 app.get("/reserve", function(req, res) {
-  res.sendFile(path.join(__dirname, "add.html"));
+    res.sendFile(path.join(__dirname, "add.html"));
 });
 
 // Displays all characters
 app.get("/api/tables", function(req, res) {
-  return res.json(tables);
+    return res.json(tables);
 });
 
 app.get("/api/waitlist", function(req, res) {
-  return res.json();
+    return res.json();
 });
 
 // Displays a single table, or returns false
 app.get("/api/tables/:table", function(req, res) {
-  var chosen = req.params.table;
+    var chosen = req.params.table;
 
-  console.log(chosen);
+    console.log(chosen);
 
-  for (var i = 0; i < tables.length; i++) {
-    if (chosen === tables[i].routeName) {
-      return res.json(tables[i]);
+    for (var i = 0; i < tables.length; i++) {
+        if (chosen === tables[i].routeName) {
+            return res.json(tables[i]);
+        }
     }
-  }
 
-  return res.json(false);
+    return res.json(false);
 });
 
 // Create New Tables - takes in JSON input
 app.post("/api/tables", function(req, res) {
-  // req.body hosts is equal to the JSON post sent from the user
-  // This works because of our body parsing middleware
-  var newTable = req.body;
+    let newTable = req.body;
 
-  // Using a RegEx Pattern to remove spaces from newTable
-  // You can read more about RegEx Patterns later https://www.regexbuddy.com/regex.html
-  newTable.routeName = newTable.name.replace(/\s+/g, "").toLowerCase();
+    newTable.routeName = newTable.customerID.toString().replace(/\s+/g, "").toLowerCase();
 
-  console.log(newTable);
+    console.log(newTable);
 
-  characters.push(newTable);
+    tables.push(newTable);
 
-  res.json(newTable);
+    res.json(newTable);
 });
 
 // Starts the server to begin listening
 // =============================================================
 app.listen(PORT, function() {
-  console.log("App listening on PORT " + PORT);
+    console.log("App listening on PORT " + PORT);
 });
