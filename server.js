@@ -33,14 +33,15 @@ app.get("/", function(req, res) {
 });
 
 app.get("/tables", function(req, res) {
-  res.sendFile(path.join(__dirname, "add.html"));
+  res.sendFile(path.join(__dirname, "reserve.html"));
 });
 
 app.get("/reserve", function(req, res) {
-  res.sendFile(path.join(__dirname, "add.html"));
+  res.sendFile(path.join(__dirname, "reserve.html"));
 });
 
-// Displays all characters
+
+
 app.get("/api/tables", function(req, res) {
   return res.json(tables);
 });
