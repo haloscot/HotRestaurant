@@ -32,5 +32,6 @@ label {
 }
 
 .nav-link:hover {
+    cursor: pointer;
     color: rgb(105, 186, 212) !important;
 }
