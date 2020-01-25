@@ -49,7 +49,7 @@ app.get("/api/waitlist", function(req, res) {
   return res.json();
 });
 
-// Displays a single character, or returns false
+// Displays a single table, or returns false
 app.get("/api/tables/:table", function(req, res) {
   var chosen = req.params.table;
 
@@ -70,7 +70,7 @@ app.post("/api/tables", function(req, res) {
   // This works because of our body parsing middleware
   var newTable = req.body;
 
-  // Using a RegEx Pattern to remove spaces from newCharacter
+  // Using a RegEx Pattern to remove spaces from newTable
   // You can read more about RegEx Patterns later https://www.regexbuddy.com/regex.html
   newTable.routeName = newTable.name.replace(/\s+/g, "").toLowerCase();
 
